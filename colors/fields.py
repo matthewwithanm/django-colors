@@ -16,3 +16,10 @@ class ColorField(models.CharField):
         kwargs['widget'] = ColorPickerWidget
         return super(ColorField, self).formfield(**kwargs)
 
+
+try:
+    from south.modelsinspector import add_introspection_rules
+except ImportError:
+    pass
+else:
+    add_introspection_rules([], ['^colors\.fields\.ColorField$'])
